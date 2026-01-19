@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Mindstream Brand Colors */
+    --background: 37 75% 96%; /* #FEF6EB - Warm Cream */
+    --foreground: 60 27% 12%; /* #37371F - Neutral Charcoal */
+
+    --card: 37 75% 96%;
+    --card-foreground: 60 27% 12%;
+
+    --popover: 37 75% 96%;
+    --popover-foreground: 60 27% 12%;
+
+    --primary: 280 33% 35%; /* #513565 - Deep Purple */
+    --primary-foreground: 37 75% 96%;
+
+    --secondary: 100 19% 40%; /* #647260 - Earthy Green */
+    --secondary-foreground: 37 75% 96%;
+
+    --muted: 37 75% 96%;
+    --muted-foreground: 60 27% 12%;
+
+    --accent: 34 70% 87%; /* #FBDDBA - Accent Cream */
+    --accent-foreground: 60 27% 12%;
+
+    --purple-support: 284 35% 32%; /* #4C2E58 */
+    --green-support: 100 23% 48%; /* #708E77 */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 37 75% 96%;
+
+    --border: 37 40% 88%;
+    --input: 37 40% 88%;
+    --ring: 280 33% 35%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
