@@ -9,18 +9,6 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 
 const Index = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success('Message sent! We\'ll be in touch soon.');
-    setFormData({ name: '', email: '', message: '' });
-  };
-
   return (
     <Layout>
       <div className="fixed inset-0 z-0">
@@ -252,17 +240,30 @@ const Index = () => {
           </div>
 
           <div className="bg-background/40 backdrop-blur-md border border-primary/20 rounded-lg p-8 md:p-12 shadow-2xl">
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm font-medium text-foreground/80">Name</Label>
-                <Input
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="bg-background/60 border-primary/20 focus:border-primary pointer-events-auto"
-                />
-              </div>
+            <div className="space-y-6 text-center">
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+              If you&apos;re dealing with operational bottlenecks, messy systems, or workflows that don&apos;t scale, get in touch.
+              </p>
+
+              <p className="text-base text-foreground/60 leading-relaxed">
+              Send a short description of the problem you&apos;re facing and what tools you&apos;re currently using. We&apos;ll reply with next steps.
+              </p>
+
+              <div className="pt-2 pointer-events-auto">
+              <Button size="lg" className="w-full sm:w-auto" asChild>
+              <a href="mailto:hello@mindstreamsolutions.com?subject=Project%20enquiry%20%E2%80%93%20Project%20name&body=Project%20name%3A%0A%0ABrief%20description%20of%20the%20problem%3A%0A%0ACurrent%20tools%20or%20systems%3A%0A%0AWhat%20isn%E2%80%99t%20working%20right%20now%3A%0A%0ATimeline%20or%20urgency%3A%0A%0AWhat%20would%20a%20successful%20outcome%20look%20like%3A
+">
+                Email hello@mindstreamsolutions.com
+              </a>
+            </Button>
+          </div>
+
+    <p className="text-sm text-foreground/50">
+      Prefer a quick outline? Include your timeline and what “done” looks like.
+    </p>
+  </div>
+</div>
+
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-sm font-medium text-foreground/80">Email</Label>
                 <Input
